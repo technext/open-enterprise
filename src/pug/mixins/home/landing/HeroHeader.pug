@@ -1,0 +1,9 @@
+mixin HeroHeader
+  section.py-0#home
+    +Background({ image: `${CWD}assets/img/illustrations/hero-bg.png`, attrs: { style: { 'background-position': 'right top', 'background-size': 'contain'} }, className: 'd-none d-sm-block' })
+    +Background({image: `${CWD}assets/img/illustrations/hero-bg.png`, attrs: { style: { 'background-position': 'right top', 'background-size': 'contain'} }, className: 'd-sm-none' })
+    .container
+      .row.align-items-center.min-vh-75.min-vh-md-100
+        .col
+          h1.display-3 Get Started!
+          p.lead Let's create something magical.
