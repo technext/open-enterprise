@@ -1,7 +1,7 @@
 mixin FeatureCard(config)
-    .card.text-center.py-md-6.px-md-4.mt-3.h-100.box-shadow-2.border-0
+    .card.py-md-6.px-md-4.mt-3.h-100.box-shadow-2.border-0
         .card-body
             img(src=config.img, alt="")
             h3.py-3 #{config.title}
-            p.fs-1.lh-base.m-0 #{config.details}
+            p.lead.lh-base.mb-0 #{config.details}
 

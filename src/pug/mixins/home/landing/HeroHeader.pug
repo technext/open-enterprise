@@ -1,19 +1,11 @@
-append variables
-    -
-        var hero = {
-            title:'A new model for <br class="d.none d-xl-block"/> open collaboration',
-            subtitle:'Run an organization where members get rewarded for their contributions with fractional ownership.',
-            image:'./images/hero.png'
-        }
-
-mixin HeroHeader(hero)
+mixin HeroHeader(config)
     +Section({
-        image: `${CWD}assets/img/illustrations/hero.png`,
+        image: `${CWD}assets/img/${config.image}`,
         className: 'd-none d-lg-block',
         attrs: { style: { 'background-position': 'right', 'background-size': '50%'}}
     }).pt-lg-0#hero
         .row.vh-lg-50.vh-xl-75.vh-xxl-100.align-items-center
             .col-sm-10.col-lg-6
-                h1.fs-6.fs-sm-8.fs-md-11.fs-lg-9.fs-xxl-12.lh-sm.font-cursive.fw-medium !{hero.title}
-                p.fs-2.fs-md-4.lh-sm.mt-4.text-800 !{hero.subtitle}
-                +RequestBtn
+                h1.fs-6.fs-sm-8.fs-md-11.fs-lg-9.fs-xxl-12.lh-sm.font-cursive.fw-medium!=config.title
+                p.fs-2.fs-md-4.lh-sm.mt-4.text-800!=config.subtitle
+                button.btn.btn-green.btn-lg.mt-4 Request early access

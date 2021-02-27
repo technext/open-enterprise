@@ -24,11 +24,10 @@ append variables
         ]
 mixin Footer
     +Section.py-4
-        .row.justify-content-center
-            .col-lg-4.text-sm-center.text-lg-start.mb-md-3
-                h3.fw-bold.fs-4 Open Enterprise
+        .row.justify-content-center.align-items-center
+            .col-lg-4.text-sm-center.text-lg-start
+                h2.mb-lg-0 Open Enterprise
             .col-lg-8
                 .d-sm-flex.justify-content-sm-center.justify-content-lg-end
                     each item in navItems
-                        div
-                            a.fs-2.ps-sm-4.text-800(href=item.href) #{item.label}
+                        a.fs-2.ps-sm-4.text-800.d-block(href=item.href) #{item.label}

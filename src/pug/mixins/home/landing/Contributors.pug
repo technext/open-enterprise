@@ -29,14 +29,14 @@ mixin Contributors
                 .row.justify-content-center.my-4
                     .col-md-10
                         .card.box-shadow-3.p-3
-                            .d-flex.justify-content-between.align-items-center.my-3
-                                h5.fs-1.font-base.fw-bold.m-0 Write a how-to on Open Enterprise
+                            .card-body.flex-between-center.pb-0
+                                h5.fs-1.fw-bold.mb-0 Write a how-to on Open Enterprise
                                 span.badge.rounded-pill.bg-green.p-2.fs-0 1 SHARE
-                            p.m-0
-                                | Looking for an amazing copywriter using Open Enterprise to help us write an article on how to get started.
+                            .card-body
+                                p.mb-0 Looking for an amazing copywriter using Open Enterprise to help us write an article on how to get started.
                     .col-sm-12.col-md-6.mt-4
                         .card.px-3.py-4.bg-light-gold
-                            h4.fs-4.font-base 3 applicants
+                            h4.fs-4 3 applicants
                             each applicant in applicants
                                 +Applicant(applicant)
                     .col-sm-12.col-md-5
@@ -44,11 +44,10 @@ mixin Contributors
                             .card-body
                                 .card-text.text-center
                                     img.rounded-circle(src=`${CWD}assets/img/gallery/axel.png`, alt="")
-                                    .py-3
-                                        h5.font-base.fs-2 Axel Rose 
-                                        p.text-secondary UX Designer
+                                    h5.fs-2.mt-2.mb-1 Axel Rose 
+                                    p.text-secondary UX Designer
                                 .d-flex.text-1000
                                     p.m-0.flex-1 4 COMMITS
-                                    img.star(src=`${CWD}assets/img/icons/star.svg`, alt="")
-                                    p.m-0.ms-2.fw-medium 4.8
-                                button.btn.btn-lg.btn-primary.w-100.bg-black.mt-3 View Profile
+                                    img(src=`${CWD}assets/img/icons/star.svg`, alt="")
+                                    p.mb-0.ms-2.fw-medium 4.8
+                                button.btn.btn-lg.btn-dark.w-100.mt-3 View Profile

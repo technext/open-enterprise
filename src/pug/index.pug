@@ -6,8 +6,7 @@ include mixins/common/Avatar
 include mixins/common/Applicant
 include mixins/common/RequestBtn
 include mixins/common/SliderCard
-
-
+//- Sections
 include mixins/home/landing/HeroHeader
 include mixins/home/landing/Features
 include mixins/home/landing/KickStart
@@ -25,18 +24,19 @@ append variables
             'data-bs-target':"#navbar"
         }
 
-
-
 append styles
     link(href=`${CWD}vendors/swiper/swiper-bundle.min.css`,rel='stylesheet') 
 
 prepend scripts
     script(src=`${CWD}vendors/swiper/swiper-bundle.min.js`) 
 
-
 append content
-    +HeroHeader(hero)
-    +Features(details)
+    +HeroHeader({
+        title:'A new model for <br class="d.none d-xl-block"/> open collaboration',
+        subtitle:'Run an organization where members get rewarded for their contributions with fractional ownership.',
+        image:'illustrations/hero.png'
+    })
+    +Features
     +KickStart
     +Onboard
     +Contributors
