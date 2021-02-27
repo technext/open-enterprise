@@ -129,7 +129,7 @@ h4, .h4 {
 
 @media (min-width: 1200px) {
   h4, .h4 {
-    font-size: 1.26562rem;
+    font-size: 1.26563rem;
   }
 }
 
@@ -3450,8 +3450,8 @@ textarea.form-control-lg {
   user-select: none;
   background-color: transparent;
   border: 1px solid transparent;
-  padding: 0.56rem 0.8rem;
-  font-size: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem;
   border-radius: 0.5rem;
   -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
@@ -4256,8 +4256,14 @@ fieldset:disabled .btn {
 
 .btn-lg, .btn-group-lg > .btn {
   padding: 0.6rem 1.7rem;
-  font-size: 1rem;
+  font-size: calc(1.28518rem + 0.42217vw);
   border-radius: 1rem;
+}
+
+@media (min-width: 1200px) {
+  .btn-lg, .btn-group-lg > .btn {
+    font-size: 1.60181rem;
+  }
 }
 
 .btn-sm, .btn-group-sm > .btn {
@@ -4710,8 +4716,8 @@ fieldset:disabled .btn {
 }
 
 .dropdown-toggle-split {
-  padding-left: 0.6rem;
-  padding-right: 0.6rem;
+  padding-left: 1.125rem;
+  padding-right: 1.125rem;
 }
 
 .dropdown-toggle-split::after,
@@ -9546,7 +9552,7 @@ fieldset:disabled .btn {
 }
 
 .fs-2 {
-  font-size: 1.26562rem !important;
+  font-size: 1.26563rem !important;
 }
 
 .fs-3 {
@@ -11464,7 +11470,7 @@ fieldset:disabled .btn {
     font-size: 1.125rem !important;
   }
   .fs-sm-2 {
-    font-size: 1.26562rem !important;
+    font-size: 1.26563rem !important;
   }
   .fs-sm-3 {
     font-size: 1.42383rem !important;
@@ -12933,7 +12939,7 @@ fieldset:disabled .btn {
     font-size: 1.125rem !important;
   }
   .fs-md-2 {
-    font-size: 1.26562rem !important;
+    font-size: 1.26563rem !important;
   }
   .fs-md-3 {
     font-size: 1.42383rem !important;
@@ -14402,7 +14408,7 @@ fieldset:disabled .btn {
     font-size: 1.125rem !important;
   }
   .fs-lg-2 {
-    font-size: 1.26562rem !important;
+    font-size: 1.26563rem !important;
   }
   .fs-lg-3 {
     font-size: 1.42383rem !important;
@@ -15871,7 +15877,7 @@ fieldset:disabled .btn {
     font-size: 1.125rem !important;
   }
   .fs-xl-2 {
-    font-size: 1.26562rem !important;
+    font-size: 1.26563rem !important;
   }
   .fs-xl-3 {
     font-size: 1.42383rem !important;
@@ -17340,7 +17346,7 @@ fieldset:disabled .btn {
     font-size: 1.125rem !important;
   }
   .fs-xxl-2 {
-    font-size: 1.26562rem !important;
+    font-size: 1.26563rem !important;
   }
   .fs-xxl-3 {
     font-size: 1.42383rem !important;

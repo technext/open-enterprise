@@ -348,6 +348,21 @@ $btn-focus-width: 0 !default;
 
 // Allows for customizing button radius independently from global border radius
 $btn-border-radius: .5rem !default;
+$btn-font-size: map-get($font-sizes, 1);
+
+
+//button padding
+
+$btn-padding-x : map-get($spacers, 4);
+$btn-padding-y : map-get($spacers, 3);
+
+
+// lg-btn
+$btn-border-radius: 1rem !default;
+$btn-font-size-lg : map-get($font-sizes, 4) !default;
+
+
+
 // $btn-border-radius-lg: .625rem !default;
 
 //*-----------------------------------------------
