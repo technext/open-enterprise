@@ -1,0 +1,6 @@
+mixin Avatar(config)
+    .d-flex.align-items-center.mt-3
+        img.rounded-circle(src=config.image, alt="")
+        div.ms-3
+            h4.fs-3.font-base #{config.name}
+            p.text-800.m-0 #{config.text}

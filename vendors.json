@@ -17,5 +17,9 @@
   "is_js": {
     "src": "is.min.js",
     "dest": "is"
+  },
+  "swiper": {
+    "src": ["swiper-bundle.min.js", "swiper-bundle.min.css"],
+    "dest": "swiper"
   }
 }

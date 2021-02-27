@@ -1,0 +1,5 @@
+mixin InfoText(config)
+    .icon
+        img(src=config.img, alt="")
+    h1.display-5.lh-sm.mt-4.font-cursive!= config.title
+    p.fs-1.lh-base.mt-4!=config.details

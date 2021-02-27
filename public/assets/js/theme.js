@@ -332,11 +332,143 @@ var navbarInit = function navbarInit() {
       navbar.style.transition = 'none';
     });
   }
-}; // /* -------------------------------------------------------------------------- */
+};
+/* -------------------------------------------------------------------------- */
+
+/*                         Navbar Darken on scroll                        */
+
+/* -------------------------------------------------------------------------- */
+
+
+var navbarDarkenOnScroll = function navbarDarkenOnScroll() {
+  var Selector = {
+    NAVBAR: '[data-navbar-darken-on-scroll]',
+    NAVBAR_COLLAPSE: '.navbar-collapse',
+    NAVBAR_TOGGLER: '.navbar-toggler'
+  };
+  var ClassNames = {
+    COLLAPSED: 'collapsed'
+  };
+  var Events = {
+    SCROLL: 'scroll',
+    SHOW_BS_COLLAPSE: 'show.bs.collapse',
+    HIDE_BS_COLLAPSE: 'hide.bs.collapse',
+    HIDDEN_BS_COLLAPSE: 'hidden.bs.collapse'
+  };
+  var DataKey = {
+    NAVBAR_DARKEN_ON_SCROLL: 'navbar-darken-on-scroll'
+  };
+  var navbar = document.querySelector(Selector.NAVBAR);
+
+  if (navbar) {
+    // const theme = localStorage.getItem("theme");
+    // if (theme === "dark") {
+    //   navbar.classList.remove("navbar-dark");
+    //   navbar.classList.add("navbar-light");
+    // } else {
+    //   navbar.classList.remove("navbar-light");
+    //   navbar.classList.add("navbar-dark");
+    // }
+    var defaultColorName = 'dark'; // const parent = document.documentElement;
+
+    var windowHeight = window.innerHeight;
+    var html = document.documentElement;
+    var navbarCollapse = navbar.querySelector(Selector.NAVBAR_COLLAPSE);
+
+    var allColors = _objectSpread(_objectSpread({}, utils.colors), utils.grays);
+
+    var name = utils.getData(navbar, DataKey.NAVBAR_DARKEN_ON_SCROLL);
+    var colorName = Object.keys(allColors).includes(name) ? name : defaultColorName;
+    var color = allColors[colorName];
+    var bgClassName = "bg-".concat(colorName);
+    var colorRgb = utils.hexToRgb(color);
+
+    var _window$getComputedSt2 = window.getComputedStyle(navbar),
+        backgroundImage = _window$getComputedSt2.backgroundImage;
+
+    var transition = 'background-color 0.35s ease';
+    var borderColor = utils.hexToRgb(allColors['300']);
+    var paddingTop = 48;
+    navbar.style.paddingTop = "".concat(paddingTop, "px");
+    navbar.style.backgroundImage = 'none';
+    navbar.style.borderBottom = 'none'; //shadow
+
+    var shadowName = 'shadow-transition'; // Change navbar background color on scroll'
+
+    window.addEventListener(Events.SCROLL, function () {
+      var scrollTop = html.scrollTop;
+      var alpha = scrollTop / windowHeight * 2; // console.log({alpha});
+
+      alpha >= 1 && (alpha = 1);
+      navbar.style.backgroundColor = "rgba(".concat(colorRgb[0], ", ").concat(colorRgb[1], ", ").concat(colorRgb[2], ", ").concat(alpha, ")");
+      navbar.style.borderBottom = "1px solid rgba(".concat(borderColor[0], ", ").concat(borderColor[1], ", ").concat(borderColor[2], ", ").concat(alpha, ")");
+      navbar.style.paddingTop = "".concat(paddingTop * (1 - alpha), "px");
+      navbar.style.backgroundImage = alpha > 0 || utils.hasClass(navbarCollapse, 'show') ? backgroundImage : 'none';
+      alpha > 0.2 || utils.hasClass(navbarCollapse, 'show') ? navbar.classList.add(shadowName) : navbar.classList.remove(shadowName);
+    }); // Toggle bg class on window resize
+
+    utils.resize(function () {
+      var breakPoint = utils.getBreakpoint(navbar);
+
+      if (window.innerWidth > breakPoint) {
+        navbar.classList.remove(bgClassName);
+        navbar.style.backgroundImage = html.scrollTop ? backgroundImage : 'none';
+        navbar.style.transition = 'none';
+      } else if (!utils.hasClass(navbar.querySelector(Selector.NAVBAR_TOGGLER), ClassNames.COLLAPSED)) {
+        navbar.classList.add(bgClassName);
+        navbar.classList.add(shadowName);
+        navbar.style.backgroundImage = backgroundImage;
+      }
+
+      if (window.innerWidth <= breakPoint) {
+        navbar.style.transition = utils.hasClass(navbarCollapse, 'show') ? transition : 'none';
+      }
+    });
+    navbarCollapse.addEventListener(Events.SHOW_BS_COLLAPSE, function () {
+      navbar.classList.add(bgClassName);
+      navbar.classList.add(shadowName);
+      navbar.style.backgroundImage = backgroundImage;
+      navbar.style.transition = transition;
+    });
+    navbarCollapse.addEventListener(Events.HIDE_BS_COLLAPSE, function () {
+      navbar.classList.remove(bgClassName);
+      navbar.classList.remove(shadowName);
+      !html.scrollTop && (navbar.style.backgroundImage = 'none');
+    });
+    navbarCollapse.addEventListener(Events.HIDDEN_BS_COLLAPSE, function () {
+      navbar.style.transition = 'none';
+    });
+  }
+};
+
+var swiper = new window.Swiper('.swiper-container', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true
+  },
+  breakpoints: {
+    576: {
+      slidesPerView: 2,
+      spaceBetween: 40
+    },
+    // 1024: {
+    //   slidesPerView: 2,
+    //   spaceBetween: 50,
+    // },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 50
+    }
+  }
+}); // /* -------------------------------------------------------------------------- */
 // /*                            Theme Initialization                            */
 // /* -------------------------------------------------------------------------- */
 
-
 docReady(navbarInit);
 docReady(detectorInit);
+docReady(swiper);
+docReady(navbarDarkenOnScroll);
 //# sourceMappingURL=theme.js.map

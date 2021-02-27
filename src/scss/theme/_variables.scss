@@ -11,7 +11,7 @@ $container-max-widths: map-merge(
     md: 720px,
     lg: 960px,
     xl: 1140px,
-    xxl: 1480px,
+    xxl: 1470px,
   ),
   $container-max-widths
 );
@@ -24,7 +24,7 @@ $grid-breakpoints: map-merge(
     md: 768px,
     lg: 992px,
     xl: 1200px,
-    xxl: 1540px,
+    xxl: 1530px,
   ),
   $grid-breakpoints
 );
@@ -32,7 +32,7 @@ $grid-breakpoints: map-merge(
 //*-----------------------------------------------
 //|   Gutter
 //-----------------------------------------------*/
-$grid-gutter-width: 2rem !default;
+$grid-gutter-width: 5rem !default;
 
 //*-----------------------------------------------
 //|   Color System
@@ -46,9 +46,9 @@ $gray-400: #D7D6DA !default;
 $gray-500: #CDCCD1 !default;
 $gray-600:  #C3C1C8 !default;
 $gray-700:  #7D7987 !default;
-$gray-800: #616368 !default;
+$gray-800: #66645E !default;
 $gray-900: #4F5665 !default;
-$gray-1000: #112D58 !default;
+$gray-1000: #303031 !default;
 $gray-1100: #1F1534 !default;
 $black: #000 !default;
 
@@ -82,10 +82,12 @@ $pink: #f6458e !default;
 $red: #F55767 !default;
 $orange: #f6d845 !default;
 $yellow: #FFA024 !default;
-$green: #66BB6A !default;
+$green: #71A894 !default;
 $teal: #299EF3 !default;
 $cyan: #3EB8F4 !default;
 $light: #F9FAFD !default;
+$light-gold: #F3F0EA !default;
+
 
 //*-----------------------------------------------
 //|   Theme Colors
@@ -98,6 +100,8 @@ $warning: $yellow !default;
 $danger: $red !default;
 $light: $light !default;
 $dark: $gray-1100 !default;
+$green: $green !default;
+$light-gold: $light-gold !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge(
@@ -110,6 +114,8 @@ $theme-colors: map-merge(
     'danger': $danger,
     'light': $light,
     'dark': $dark,
+    'green': $green,
+    'light-gold':$light-gold,
   ),
   $theme-colors
 );
@@ -191,17 +197,17 @@ $spacers: () !default;
 $spacers: map-merge(
   (
     0: 0,
-    1: $spacer * 0.25,
-    2: $spacer * 0.5,
-    3: $spacer,
-    4: $spacer * 1.8,
-    5: $spacer * 3,
-    6: $spacer * 4,
-    7: $spacer * 5,
-    8: $spacer * 7.5,
-    9: $spacer * 10,
-    10: $spacer * 12.5,
-    11: $spacer * 15
+    1: $spacer * 0.25,//4
+    2: $spacer * 0.5,//8
+    3: $spacer,//16
+    4: $spacer * 1.5,//24
+    5: $spacer * 3,//48.
+    6: $spacer * 4,//64
+    7: $spacer * 5,//80
+    8: $spacer * 7.5,//120
+    9: $spacer * 10,//160
+    10: $spacer * 12.5,//200
+    11: $spacer * 15//240
   ),
   $spacers
 );
@@ -209,8 +215,8 @@ $spacers: map-merge(
 //*-----------------------------------------------
 //|   Body
 //-----------------------------------------------*/
-$body-bg: $white !default;
-$body-color: $gray-700 !default;
+$body-bg: $light !default;
+$body-color: $gray-800 !default;
 
 //*-----------------------------------------------
 //|   Link
@@ -221,41 +227,50 @@ $link-hover-decoration: underline !default;
 //*-----------------------------------------------
 //|   Components
 //-----------------------------------------------*/
-$border-radius: 0.25rem !default;
+$border-radius: 0.5rem !default;
 $border-radius-sm: 0.3rem !default;
-$border-radius-lg: .5rem !default;
+$border-radius-lg: 1rem !default;
 
 //*-----------------------------------------------
 //|   Fonts Families
-//-----------------------------------------------*/
-$font-family-sans-serif: 'Poppins', 'Open Sans', -apple-system, BlinkMacSystemFont,
+//-----------------------------------------------*
+
+$font-family-sans-serif: 'Roboto', 'Open Sans', -apple-system, BlinkMacSystemFont,
   'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
   'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+
+$font-family-cursive: 'Abril Fatface', cursive !default;
+
 $font-family-monospace: 'SFMono-Regular', Menlo, Monaco, Consolas,
   'Liberation Mono', 'Courier New', monospace !default;
-$font-family-base: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+
+$font-family-base: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
    'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
   'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 
 //*-----------------------------------------------
 //|   Fonts
 //-----------------------------------------------*/
-$type-scale: 1.2;
+$type-scale: 1.125;
 $font-size-base: 1rem !default;
 $font-sizes: () !default;
 $font-sizes: map-merge(
   (
     '-2': 1 / pow($type-scale, 2) * $font-size-base,
     '-1': 1 / $type-scale * $font-size-base,
-    0: $font-size-base,
-    1: pow($type-scale, 1) * $font-size-base,
-    2: pow($type-scale, 2) * $font-size-base,
-    3: pow($type-scale, 3) * $font-size-base,
-    4: pow($type-scale, 4) * $font-size-base,
-    5: pow($type-scale, 5) * $font-size-base,
-    6: pow($type-scale, 6) * $font-size-base,
-    7: pow($type-scale, 7) * $font-size-base,
-    8: pow($type-scale, 8) * $font-size-base,
+    0: $font-size-base,//16
+    1: pow($type-scale, 1) * $font-size-base,//18
+    2: pow($type-scale, 2) * $font-size-base,//20.25
+    3: pow($type-scale, 3) * $font-size-base,//22.78125
+    4: pow($type-scale, 4) * $font-size-base,//25.62890625
+    5: pow($type-scale, 5) * $font-size-base,//28.83251953125
+    6: pow($type-scale, 6) * $font-size-base,//32.43658447265625
+    7: pow($type-scale, 7) * $font-size-base,//36.49115753173828
+    8: pow($type-scale, 8) * $font-size-base,//41.052552223205566
+    9: pow($type-scale, 9) * $font-size-base,//46.18412125110626
+    10: pow($type-scale, 10) * $font-size-base,//51.957136407494545
+    11: pow($type-scale, 11) * $font-size-base,//58.45177845843136
+    12: pow($type-scale, 12) * $font-size-base,//65.75825076573528
   ),
   $font-sizes
 );
@@ -279,25 +294,25 @@ $h4-font-size: map_get($font-sizes, 2) !default;
 $h5-font-size: map_get($font-sizes, 1) !default;
 $h6-font-size: map_get($font-sizes, '-1') !default;
 
-$headings-font-family: $font-family-sans-serif !default;
-$headings-font-weight: $font-weight-medium !default;
+$headings-font-family: $font-family-base !default;
+$headings-font-weight: $font-weight-bold !default;
 $headings-color: $gray-1000 !default;
 
 // scss-docs-start display-headings
 $display-font-sizes: () !default;
 $display-font-sizes: map-merge(
   (
-    1: map_get($font-sizes, 8),
-    2: map_get($font-sizes, 7),
-    3: map_get($font-sizes, 6),
-    4: map_get($font-sizes, 5),
-    5: map_get($font-sizes, 4),
-    6: map_get($font-sizes, 3),
+    1: pow($type-scale, 14) * $font-size-base,//83.22528612538372
+    2: pow($type-scale, 13) * $font-size-base,//73.9780321114522
+    3: pow($type-scale, 12) * $font-size-base,//65.75825076573528
+    4: pow($type-scale, 11) * $font-size-base,//58.45177845843136
+    5: pow($type-scale, 10) * $font-size-base,//51.957136407494545
+    6: pow($type-scale, 9) * $font-size-base,//46.18412125110626
   ),
   $display-font-sizes
 );
 
-$display-font-weight: $font-weight-black !default;
+// $display-font-weight: $font-weight-black !default;
 $display-line-height: 1 !default;
 // scss-docs-end display-headings
 
@@ -332,7 +347,7 @@ $btn-font-weight: $font-weight-medium !default;
 $btn-focus-width: 0 !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius: 0.313rem !default;
+$btn-border-radius: .5rem !default;
 // $btn-border-radius-lg: .625rem !default;
 
 //*-----------------------------------------------
@@ -341,8 +356,8 @@ $btn-border-radius: 0.313rem !default;
 $navbar-font-size: $font-size-base * 0.8 !default;
 
 $navbar-light-color: rgba($black, 0.95) !default;
-$navbar-light-hover-color: rgba($black, 0.95) !default;
-$navbar-light-active-color: $dark !default;
+$navbar-light-hover-color: $green !default;
+$navbar-light-active-color: $green !default;
 $navbar-light-disabled-color: rgba($black, 0.25) !default;
 
 $navbar-dark-color: rgba($white, .7) !default;
@@ -364,8 +379,10 @@ $navbar-light-toggler-icon-bg: str-replace(
 // /*-----------------------------------------------
 //|   Navbar Brand
 //-----------------------------------------------*/
-$navbar-brand-font-size: map_get($font-sizes, 3) !default;
+$navbar-brand-font-size: map_get($font-sizes, 4) !default;
 $navbar-brand-font-weight: $font-weight-bolder !default;
+$navbar-light-brand-color : $gray-1000;
+$navbar-light-brand-hover-color : $gray-1100;
 
 //*-----------------------------------------------
 //|   Viewport Heights & Widths
@@ -414,9 +431,10 @@ $hr-opacity: 1 !default;
 //*-----------------------------------------------
 //|   card
 //-----------------------------------------------*/
-$card-border-width:                 2px !default;
-$card-border-radius:                1.25rem !default;
+$card-border-width:                 4px !default;
+$card-border-radius:                1rem !default;
 $card-cap-bg:                        tint-color($gray-500, 90%) !default;
+$card-border-color : $black;
 
 
 //*-----------------------------------------------

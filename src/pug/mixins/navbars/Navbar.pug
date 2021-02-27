@@ -1,20 +1,21 @@
-mixin Navbar
-  nav.navbar.navbar-expand-lg.navbar-light.fixed-top.py-3.backdrop(data-navbar-on-scroll)
-    .container
-      a.navbar-brand(href='#')
-        img(src=`${CWD}assets/img/gallery/logo.png` alt=''  width="123").img-fluid
+mixin Navbar(navItems)
+    nav.navbar.navbar-expand-xl.navbar-light.sticky-top.px-0.pb-0.mb-2#navbar(data-navbar-darken-on-scroll="white")
+        .container-fluid.align-items-center
+            a.navbar-brand.flex-center(href='#')
+                img.logo(src=`${CWD}/assets/img/gallery/Logo.png`)
+                span.ms-2.d-none.d-sm-block.fw-bold Open Enterprise
+            button.navbar-toggler(
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation"
+            )
+                span.navbar-toggler-icon
+            div.collapse.navbar-collapse#navbarSupportedContent.justify-content-end
+                ul.navbar-nav.mr-auto.mt-3.mt-xl-0
+                    each item,index in navItems
+                        li.nav-item.ps-0.ps-xl-4.ms-2
+                            a.nav-link.fs-2.fw-medium(href=item.path) #{item.label} 
 
-      button.navbar-toggler.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-        span.navbar-toggler-icon
-    
-      #navbarSupportedContent.collapse.navbar-collapse.border-top.border-lg-0.mt-4.mt-lg-0
-        ul.navbar-nav.me-auto.mb-2.mb-lg-0
-          li.nav-item.px-2
-            a.nav-link.fw-medium(aria-current='page', href='#' class= currentPage === 'index' ? 'active' : false ) Home
-          li.nav-item.px-2
-            a.nav-link.fw-medium(href='#features') Jobs
-          li.nav-item.px-2
-            a.nav-link.fw-medium(href='#pricing') Career tips
-          
-        form.d-flex
-          button.btn.btn-lg.btn-primary.bg-gradient.order-0(type='submit') Sign Up

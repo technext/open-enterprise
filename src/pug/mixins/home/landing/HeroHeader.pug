@@ -1,9 +1,19 @@
-mixin HeroHeader
-  section.py-0#home
-    +Background({ image: `${CWD}assets/img/illustrations/hero-bg.png`, attrs: { style: { 'background-position': 'right top', 'background-size': 'contain'} }, className: 'd-none d-sm-block' })
-    +Background({image: `${CWD}assets/img/illustrations/hero-bg.png`, attrs: { style: { 'background-position': 'right top', 'background-size': 'contain'} }, className: 'd-sm-none' })
-    .container
-      .row.align-items-center.min-vh-75.min-vh-md-100
-        .col
-          h1.display-3 Get Started!
-          p.lead Let's create something magical.
+append variables
+    -
+        var hero = {
+            title:'A new model for <br class="d.none d-xl-block"/> open collaboration',
+            subtitle:'Run an organization where members get rewarded for their contributions with fractional ownership.',
+            image:'./images/hero.png'
+        }
+
+mixin HeroHeader(hero)
+    +Section({
+        image: `${CWD}assets/img/illustrations/hero.png`,
+        className: 'd-none d-lg-block',
+        attrs: { style: { 'background-position': 'right', 'background-size': '50%'}}
+    }).pt-lg-0#hero
+        .row.vh-lg-50.vh-xl-75.vh-xxl-100.align-items-center
+            .col-sm-10.col-lg-6
+                h1.fs-6.fs-sm-8.fs-md-11.fs-lg-9.fs-xxl-12.lh-sm.font-cursive.fw-medium !{hero.title}
+                p.fs-2.fs-md-4.lh-sm.mt-4.text-800 !{hero.subtitle}
+                +RequestBtn

@@ -1,0 +1,54 @@
+append variables
+    -
+        var applicants = [
+            {
+                name:'Jason Kwon',
+                image:`${CWD}assets/img/gallery/user5.png`
+            },
+            {
+                name:'Alex Rose',
+                image:`${CWD}assets/img/gallery/user6.png`
+            },
+            {
+                name:'Lizzie Ulrich',
+                image:`${CWD}assets/img/gallery/user7.png`
+            },
+        ]
+        
+        
+mixin Contributors
+    +Section
+        .row.align-items-center.gx-1
+            .col-xl-6
+                +InfoText({
+                    img:`${CWD}assets/img/icons/icon3.png`,
+                    title:'Engage highly committed contributors',
+                    details:'You need talented people on-demand across various tasks that your full-time workforce can’t prioritize at the moment. As an Open Enterprise, you can easily fund tasks and have people apply to work on them in return for funds or shares.'
+                })
+            .col-xl-6
+                .row.justify-content-center.my-4
+                    .col-md-10
+                        .card.box-shadow-3.p-3
+                            .d-flex.justify-content-between.align-items-center.my-3
+                                h5.fs-1.font-base.fw-bold.m-0 Write a how-to on Open Enterprise
+                                span.badge.rounded-pill.bg-green.p-2.fs-0 1 SHARE
+                            p.m-0
+                                | Looking for an amazing copywriter using Open Enterprise to help us write an article on how to get started.
+                    .col-sm-12.col-md-6.mt-4
+                        .card.px-3.py-4.bg-light-gold
+                            h4.fs-4.font-base 3 applicants
+                            each applicant in applicants
+                                +Applicant(applicant)
+                    .col-sm-12.col-md-5
+                        .card.p-2.mt-4.mt-md-5.border-green
+                            .card-body
+                                .card-text.text-center
+                                    img.rounded-circle(src=`${CWD}assets/img/gallery/axel.png`, alt="")
+                                    .py-3
+                                        h5.font-base.fs-2 Axel Rose 
+                                        p.text-secondary UX Designer
+                                .d-flex.text-1000
+                                    p.m-0.flex-1 4 COMMITS
+                                    img.star(src=`${CWD}assets/img/icons/star.svg`, alt="")
+                                    p.m-0.ms-2.fw-medium 4.8
+                                button.btn.btn-lg.btn-primary.w-100.bg-black.mt-3 View Profile

@@ -1,12 +1,45 @@
 extends layouts/LayoutTheme
-include mixins/home/landing/HeroHeader
+include mixins/common/TitleText
+include mixins/common/FeatureCard
+include mixins/common/InfoText
+include mixins/common/Avatar
+include mixins/common/Applicant
+include mixins/common/RequestBtn
+include mixins/common/SliderCard
 
+
+include mixins/home/landing/HeroHeader
+include mixins/home/landing/Features
+include mixins/home/landing/KickStart
+include mixins/home/landing/Onboard
+include mixins/home/landing/Contributors
+include mixins/home/landing/Slider
+include mixins/home/landing/FooterHero
+include mixins/home/landing/Footer
 
 append variables
-  - var currentPage = 'index'
+    - var currentPage = 3;
+    -
+        var attrsBody = {
+            'data-bs-spy':"scroll",
+            'data-bs-target':"#navbar"
+        }
+
+
+
+append styles
+    link(href=`${CWD}vendors/swiper/swiper-bundle.min.css`,rel='stylesheet') 
 
 prepend scripts
-  
+    script(src=`${CWD}vendors/swiper/swiper-bundle.min.js`) 
+
 
 append content
-  +HeroHeader
+    +HeroHeader(hero)
+    +Features(details)
+    +KickStart
+    +Onboard
+    +Contributors
+    +Slider
+    +FooterHero
+    +Footer
