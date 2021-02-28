@@ -517,7 +517,6 @@ function swiperInit() {
 // /* -------------------------------------------------------------------------- */
 
 
-docReady(navbarInit);
 docReady(detectorInit);
 docReady(swiperInit);
 docReady(navbarDarkenOnScroll);
