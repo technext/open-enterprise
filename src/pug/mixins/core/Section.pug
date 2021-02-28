@@ -14,7 +14,7 @@ mixin Section(background, container)
     - } else if (typeof(background === 'string') && typeof(container) === 'undefined') { container = background }
 
     //- Container for content
-    - if (typeof(container) === 'undefined') { container = 'container-fluid' }
+    - if (typeof(container) === 'undefined') { container = 'container-xxl' }
     div(class=container)
 
       block
