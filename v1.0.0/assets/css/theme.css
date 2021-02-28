@@ -129,7 +129,7 @@ h4, .h4 {
 
 @media (min-width: 1200px) {
   h4, .h4 {
-    font-size: 1.26562rem;
+    font-size: 1.26563rem;
   }
 }
 
@@ -4264,7 +4264,7 @@ fieldset:disabled .btn {
 
 @media (min-width: 1200px) {
   .btn-lg, .btn-group-lg > .btn {
-    font-size: 1.26562rem;
+    font-size: 1.26563rem;
   }
 }
 
@@ -9567,7 +9567,7 @@ fieldset:disabled .btn {
 }
 
 .fs-2 {
-  font-size: 1.26562rem !important;
+  font-size: 1.26563rem !important;
 }
 
 .fs-3 {
@@ -11493,7 +11493,7 @@ fieldset:disabled .btn {
     font-size: 1.125rem !important;
   }
   .fs-sm-2 {
-    font-size: 1.26562rem !important;
+    font-size: 1.26563rem !important;
   }
   .fs-sm-3 {
     font-size: 1.42383rem !important;
@@ -12962,7 +12962,7 @@ fieldset:disabled .btn {
     font-size: 1.125rem !important;
   }
   .fs-md-2 {
-    font-size: 1.26562rem !important;
+    font-size: 1.26563rem !important;
   }
   .fs-md-3 {
     font-size: 1.42383rem !important;
@@ -14431,7 +14431,7 @@ fieldset:disabled .btn {
     font-size: 1.125rem !important;
   }
   .fs-lg-2 {
-    font-size: 1.26562rem !important;
+    font-size: 1.26563rem !important;
   }
   .fs-lg-3 {
     font-size: 1.42383rem !important;
@@ -15900,7 +15900,7 @@ fieldset:disabled .btn {
     font-size: 1.125rem !important;
   }
   .fs-xl-2 {
-    font-size: 1.26562rem !important;
+    font-size: 1.26563rem !important;
   }
   .fs-xl-3 {
     font-size: 1.42383rem !important;
@@ -17369,7 +17369,7 @@ fieldset:disabled .btn {
     font-size: 1.125rem !important;
   }
   .fs-xxl-2 {
-    font-size: 1.26562rem !important;
+    font-size: 1.26563rem !important;
   }
   .fs-xxl-3 {
     font-size: 1.42383rem !important;
@@ -18457,12 +18457,18 @@ label {
 }
 
 .box-shadow-b {
+  -webkit-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   -webkit-box-shadow: 0px 15px 0px -8px #71A894;
   box-shadow: 0px 15px 0px -8px #71A894;
 }
 
-.swiper-container {
-  overflow: auto;
+.box-shadow-b:hover, .box-shadow-b:focus {
+  -webkit-transform: translate3d(0, -5px, 0);
+  transform: translate3d(0, -5px, 0);
+  -webkit-box-shadow: 0px 20px 0px -8px #71A894;
+  box-shadow: 0px 20px 0px -8px #71A894;
 }
 
 .swiper-pagination-bullet {
