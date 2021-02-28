@@ -30,17 +30,8 @@ const navbarDarkenOnScroll = () => {
  
 
   if (navbar) {
-    // const theme = localStorage.getItem("theme");
-    // if (theme === "dark") {
-    //   navbar.classList.remove("navbar-dark");
-    //   navbar.classList.add("navbar-light");
-    // } else {
-    //   navbar.classList.remove("navbar-light");
-    //   navbar.classList.add("navbar-dark");
-    // }
     const defaultColorName = 'dark';
 
-    // const parent = document.documentElement;
     const windowHeight = window.innerHeight;
     const html = document.documentElement;
     const navbarCollapse = navbar.querySelector(Selector.NAVBAR_COLLAPSE);
@@ -100,7 +91,7 @@ const navbarDarkenOnScroll = () => {
         )
       ) {
         navbar.classList.add(bgClassName);
-        navbar.classList.add(shadowName);
+        // navbar.classList.add(shadowName);
         navbar.style.backgroundImage = backgroundImage;
       }
 
