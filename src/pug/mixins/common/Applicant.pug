@@ -1,8 +1,6 @@
-mixin Applicant(config)
+mixin Applicant({image,name})
    .applicant.d-flex.justify-content-between.text-1000
       .d-flex.align-items-center
-         img.rounded-circle.my-2(src=config.image, alt="")
-         p.fs-2.m-0.mx-1.fw-semi-bold #{config.name}
-      .d-flex.align-items-center
-         img.star(src=`${CWD}assets/img/icons/star.svg`, alt="")
-         p.m-0.mx-1.fw-medium 4.8
+         +Avatar(image,40).my-2.me-3
+         p.fs-2.mb-0.fw-semi-bold #{name}
+      +Rating(4.8)

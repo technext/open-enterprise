@@ -450,9 +450,9 @@ var swiper = new window.Swiper('.swiper-container', {
     clickable: true
   },
   breakpoints: {
-    576: {
+    670: {
       slidesPerView: 2,
-      spaceBetween: 40
+      spaceBetween: 20
     },
     1200: {
       slidesPerView: 3,

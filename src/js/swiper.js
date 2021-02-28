@@ -1,7 +1,6 @@
 
 var swiper = new window.Swiper('.swiper-container', {
     slidesPerView: 1,
-
     spaceBetween: 30,
     pagination: {
         el: '.swiper-pagination',
@@ -10,9 +9,9 @@ var swiper = new window.Swiper('.swiper-container', {
 
     },
     breakpoints: {
-        576: {
+        670: {
           slidesPerView: 2,
-          spaceBetween: 40,
+          spaceBetween: 20,
         },
         1200: {
           slidesPerView: 3,

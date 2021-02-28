@@ -1,4 +1,4 @@
-mixin InfoText(config)
-    img(src=config.img, alt="")
-    h1.display-5.lh-sm.mt-4.font-cursive!= config.title
-    p.fs-1.mt-4!=config.details
+mixin InfoText({img,title,details})
+    img(src=img, alt="")
+    h1.display-5.lh-sm.my-4.font-cursive!= title
+    p.fs-1!=details

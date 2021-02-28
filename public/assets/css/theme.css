@@ -4258,13 +4258,13 @@ fieldset:disabled .btn {
 
 .btn-lg, .btn-group-lg > .btn {
   padding: 0.6rem 1.7rem;
-  font-size: calc(1.28518rem + 0.42217vw);
+  font-size: calc(1.25156rem + 0.01875vw);
   border-radius: 1rem;
 }
 
 @media (min-width: 1200px) {
   .btn-lg, .btn-group-lg > .btn {
-    font-size: 1.60181rem;
+    font-size: 1.26563rem;
   }
 }
 
@@ -18436,17 +18436,17 @@ label {
   height: 40px;
 }
 
-.box-shadow-1 {
+.box-shadow-rb {
   -webkit-box-shadow: 20px 20px #71A894;
   box-shadow: 20px 20px #71A894;
 }
 
-.box-shadow-2 {
+.box-shadow-all {
   -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.box-shadow-3 {
+.box-shadow-b {
   -webkit-box-shadow: 0px 15px 0px -8px #71A894;
   box-shadow: 0px 15px 0px -8px #71A894;
 }
