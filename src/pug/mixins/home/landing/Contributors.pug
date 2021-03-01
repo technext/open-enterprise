@@ -28,20 +28,20 @@ mixin Contributors
             .col-xl-6
                 .row.justify-content-center.gx-4
                     .col-md-10
-                        .card.box-shadow-b.p-3
+                        .card.box-shadow-b.p-2.p-md-3
                             .card-body.flex-between-center.pb-0
                                 h5.mb-0 Write a how-to on Open Enterprise
-                                span.badge.rounded-pill.bg-green.p-2.fs-0 1 SHARE
+                                span.badge.rounded-pill.bg-success.p-2.fs-0 1 SHARE
                             .card-body
                                 p.mb-0 Looking for an amazing copywriter using Open Enterprise to help us write an article on how to get started.
                     .col-sm-12.col-md-6.mt-4
-                        .card.px-3.py-4.bg-light-gold
+                        .card.px-3.py-4.bg-warning
                             .card-body
                                 h2 3 applicants
                                 each applicant in applicants
                                     +Applicant(applicant)
                     .col-sm-12.col-md-5
-                        .card.p-2.mt-4.mt-md-5.border-green
+                        .card.p-2.mt-4.mt-md-5.border-success
                             .card-body
                                 .card-text.text-center
                                     +Avatar(`${CWD}assets/img/gallery/axel.png`,70)

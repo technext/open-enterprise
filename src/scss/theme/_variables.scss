@@ -11,7 +11,7 @@ $container-max-widths: map-merge(
     md: 720px,
     lg: 960px,
     xl: 1140px,
-    xxl: 1470px,
+    xxl: 1480px,
   ),
   $container-max-widths
 );
@@ -24,7 +24,7 @@ $grid-breakpoints: map-merge(
     md: 768px,
     lg: 992px,
     xl: 1200px,
-    xxl: 1530px,
+    xxl: 1540px,
   ),
   $grid-breakpoints
 );
@@ -96,12 +96,10 @@ $primary: $blue !default;
 $secondary: $gray-900 !default;
 $success: $green !default;
 $info: $cyan !default;
-$warning: $yellow !default;
+$warning: $light-gold !default;
 $danger: $red !default;
 $light: $light !default;
 $dark: $gray-1000 !default;
-$green: $green !default;
-$light-gold: $light-gold !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge(
@@ -114,8 +112,6 @@ $theme-colors: map-merge(
     'danger': $danger,
     'light': $light,
     'dark': $dark,
-    'green': $green,
-    'light-gold':$light-gold,
   ),
   $theme-colors
 );

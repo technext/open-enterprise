@@ -8,6 +8,7 @@ include mixins/common/Member
 include mixins/common/Applicant
 include mixins/common/SliderCard
 include mixins/common/Rating
+include mixins/common/Hero
 //- Sections
 include mixins/home/landing/HeroHeader
 include mixins/home/landing/Features
@@ -33,11 +34,7 @@ prepend scripts
     script(src=`${CWD}vendors/swiper/swiper-bundle.min.js`) 
 
 append content
-    +HeroHeader({
-        title:'A new model for <br class="d.none d-xl-block"/> open collaboration',
-        subtitle:'Run an organization where members get rewarded for their contributions with fractional ownership.',
-        image:'illustrations/hero.png'
-    })
+    +HeroHeader
     +Features
     +KickStart
     +Onboard
