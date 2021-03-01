@@ -340,8 +340,8 @@ var navbarDarkenOnScroll = function navbarDarkenOnScroll() {
         navbar.style.backgroundImage = html.scrollTop ? backgroundImage : 'none';
         navbar.style.transition = 'none';
       } else if (!utils.hasClass(navbar.querySelector(Selector.NAVBAR_TOGGLER), ClassNames.COLLAPSED)) {
-        navbar.classList.add(bgClassName); // navbar.classList.add(shadowName);
-
+        // navbar.classList.add(bgClassName);
+        // navbar.classList.add(shadowName);
         navbar.style.backgroundImage = backgroundImage;
       }
 
@@ -350,13 +350,13 @@ var navbarDarkenOnScroll = function navbarDarkenOnScroll() {
       }
     });
     navbarCollapse.addEventListener(Events.SHOW_BS_COLLAPSE, function () {
-      navbar.classList.add(bgClassName);
+      // navbar.classList.add(bgClassName);
       navbar.classList.add(shadowName);
       navbar.style.backgroundImage = backgroundImage;
       navbar.style.transition = transition;
     });
     navbarCollapse.addEventListener(Events.HIDE_BS_COLLAPSE, function () {
-      navbar.classList.remove(bgClassName);
+      // navbar.classList.remove(bgClassName);
       navbar.classList.remove(shadowName);
       !html.scrollTop && (navbar.style.backgroundImage = 'none');
     });
